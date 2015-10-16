@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://test_171de008aa952499c4a4dc171addf8de049:@api.lob.com/v1/jobs
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Lob/v1 RubyBindings/2.1.1
+      Lob-Version:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Authorization, Content-Type, If-None-Match
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - WWW-Authenticate, Server-Authorization
+      Access-Control-Max-Age:
+      - '86400'
+      Cache-Control:
+      - no-cache
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 16 Oct 2015 19:41:10 GMT
+      Vary:
+      - origin,accept-encoding
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA6vmUgACpZTEkkQlK4XoWB0IPzm/NK8EKGAA5eelVpTElxbl
+        AIWUMkpKCoqt9PUTCzL1cvKT9JLzc/XLDPWz8pOK7cH6bA0N1PLT0opTQSwl
+        qAkFRallmfmlxVBT8kpzcqAy+UlZqckgy5RyMotLlLhqAY8SJsqUAAAA
+    http_version: 
+  recorded_at: Fri, 16 Oct 2015 19:41:10 GMT
+recorded_with: VCR 2.9.3

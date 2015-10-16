@@ -13,7 +13,6 @@ RSpec.describe LetterService::PostalMethodsDriver do
     open("spec/fixtures/letter_example.pdf")
   end
 
-
   let(:letter_log) { double("Letter") }
 
   it "must be used to prepare the connection" do
