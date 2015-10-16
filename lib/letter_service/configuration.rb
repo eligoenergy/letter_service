@@ -1,5 +1,5 @@
 module LetterService
-  # I decided to put configuration stuff in its own class, so there is only the one 
+  # I decided to put configuration stuff in its own class, so there is only the one
   # module/class variable
   class Configuration
     # This is a symbol, so there are no references to the driver outside of @drivers
@@ -19,13 +19,12 @@ module LetterService
 
     # Validation on the address reader
     def from_address
-      raise InvalidConfigException, "Please set LetterService.config.from_address" unless @from_address
+      fail InvalidConfigException, 'Please set LetterService.config.from_address' unless @from_address
       @from_address
     end
   end
 
   # Something is wrong with your configuration
   class InvalidConfigException < Exception
-
   end
 end

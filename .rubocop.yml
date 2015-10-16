@@ -1,0 +1,25 @@
+Style/BlockComments:
+  Enabled: false
+
+Style/GuardClause:
+  Enabled: false
+
+Style/Documentation:
+  Exclude:
+    - 'lib/letter_service.rb'
+    - 'lib/letter_service/version.rb'
+
+Metrics/AbcSize:
+  Exclude: 
+    - 'lib/letter_service/drivers/postalmethods.rb'
+
+Metrics/MethodLength:
+  Exclude: 
+    - 'lib/letter_service/drivers/postalmethods.rb'
+
+Metrics/LineLength:
+  Max: 120
+  Exclude: 
+    - 'lib/letter_service/drivers/postalmethods.rb'
+
+
