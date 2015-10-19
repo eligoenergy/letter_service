@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['enelson@eligoenergy.com']
 
   spec.summary       = 'Abstracts sending physical mail from multiple APIs and services'
-  spec.homepage      = 'https://github.com/nelseric/letter_service.git'
+  spec.homepage      = 'https://github.com/eligoenergy/letter_service.git'
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.bindir        = 'exe'

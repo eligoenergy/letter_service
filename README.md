@@ -1,8 +1,8 @@
 # LetterService
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/letter_service`. To experiment with that code, run `bin/console` for an interactive prompt.
+This library provides a provider agnostic way of sending letters, and configuring different providers / drivers.
+The service needs to be configured with all of the drivers you might use, and set any defaults you will use
 
-TODO: Delete this and the text above, and describe your gem
 
 ## Installation
 
@@ -22,7 +22,37 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### Here is an example configuration
+```ruby
+LetterService.configure do |config|
+  config.drivers = {
+    lob_test: LetterService::LobDriver.new(api_key: ENV["LOB_TEST_API_KEY"]),
+
+    lob: LetterService::LobDriver.new(api_key: ENV["LOB_API_KEY"]),
+
+    postal: LetterService::PostalMethodsDriver.new(api_key: CONFIG.postal_methods.api_key)
+
+  }
+
+  config.default_driver = :lob
+
+  config.from_address = LetterService::Address.new(
+    name: 'Eligo Energy, LLC',
+    street1: '201 W Lake St',
+    street2: 'Suite 151',
+    city: 'Chicago',
+    state: 'IL',
+    zipcode: 'US',
+    zipcode: '60606'
+  )
+end
+```
+
+To send a letter, you would then call `LetterService.send_letter(document, to_address, **options)`
+
+To use a different driver, you would use the same send_letter parameters, but would call `LetterService.use(:driver_key)` to select a specific driver or service to send with
+
+Any address must be a valid `LetterService::Address`
 
 ## Development
 
@@ -32,5 +62,5 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/letter_service.
+Bug reports and pull requests are welcome on GitHub at https://github.com/eligoenergy/letter_service.
 

@@ -12,7 +12,7 @@ require 'letter_service/drivers/postalmethods'
 =begin
 LetterService.configure do |config|
   config.drivers = {
-    lob_test: LetterService::LobDriver.new(api_key: "test_171de008aa952499c4a4dc171addf8de049"),
+    lob_test: LetterService::LobDriver.new(api_key: ENV["LOB_TEST_API_KEY"]),
 
     lob: LetterService::LobDriver.new(api_key: ENV["LOB_API_KEY"]),
 
